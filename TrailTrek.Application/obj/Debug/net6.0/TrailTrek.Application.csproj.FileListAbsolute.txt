@@ -1,0 +1,15 @@
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\bin\Debug\net6.0\TrailTrek.Application.deps.json
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\bin\Debug\net6.0\TrailTrek.Application.dll
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\bin\Debug\net6.0\TrailTrek.Application.pdb
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\bin\Debug\net6.0\TrailTrek.Domain.dll
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\bin\Debug\net6.0\TrailTrek.Domain.pdb
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\obj\Debug\net6.0\TrailTrek.Application.csproj.AssemblyReference.cache
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\obj\Debug\net6.0\TrailTrek.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\obj\Debug\net6.0\TrailTrek.Application.AssemblyInfoInputs.cache
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\obj\Debug\net6.0\TrailTrek.Application.AssemblyInfo.cs
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\obj\Debug\net6.0\TrailTrek.Application.csproj.CoreCompileInputs.cache
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\obj\Debug\net6.0\TrailTrek.Application.csproj.CopyComplete
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\obj\Debug\net6.0\TrailTrek.Application.dll
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\obj\Debug\net6.0\refint\TrailTrek.Application.dll
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\obj\Debug\net6.0\TrailTrek.Application.pdb
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Application\obj\Debug\net6.0\ref\TrailTrek.Application.dll

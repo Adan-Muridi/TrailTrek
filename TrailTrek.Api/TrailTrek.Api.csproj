@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>2cfc6a5e-5037-4a28-9e17-a2041cbc42ce</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TrailTrek.Application\TrailTrek.Application.csproj" />
+    <ProjectReference Include="..\TrailTrek.Contracts\TrailTrek.Contracts.csproj" />
+    <ProjectReference Include="..\TrailTrek.Infrastructure\TrailTrek.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

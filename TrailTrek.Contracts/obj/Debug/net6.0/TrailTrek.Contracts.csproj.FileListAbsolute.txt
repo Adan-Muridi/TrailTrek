@@ -1,0 +1,12 @@
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\bin\Debug\net6.0\TrailTrek.Contracts.deps.json
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\bin\Debug\net6.0\TrailTrek.Contracts.dll
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\bin\Debug\net6.0\TrailTrek.Contracts.pdb
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\obj\Debug\net6.0\TrailTrek.Contracts.csproj.AssemblyReference.cache
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\obj\Debug\net6.0\TrailTrek.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\obj\Debug\net6.0\TrailTrek.Contracts.AssemblyInfoInputs.cache
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\obj\Debug\net6.0\TrailTrek.Contracts.AssemblyInfo.cs
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\obj\Debug\net6.0\TrailTrek.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\obj\Debug\net6.0\TrailTrek.Contracts.dll
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\obj\Debug\net6.0\refint\TrailTrek.Contracts.dll
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\obj\Debug\net6.0\TrailTrek.Contracts.pdb
+C:\Users\jazzy\source\repos\TrailTrek\TrailTrek.Contracts\obj\Debug\net6.0\ref\TrailTrek.Contracts.dll
