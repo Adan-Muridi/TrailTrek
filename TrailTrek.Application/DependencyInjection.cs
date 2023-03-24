@@ -4,19 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TrailTrek.Application.Services.Authentication.Commands;
-using TrailTrek.Application.Services.Authentication.Queries;
+using MediatR;
+using System.Net.NetworkInformation;
+
 
 namespace TrailTrek.Application
 {
     public static class DependencyInjection
     {
-
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<IAuthenticationCommandService, AuthenticationCommandService>();
-            services.AddScoped<IAuthenticationQueryService, AuthenticationQueryService>();
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
 
+            //services.AddMediatR(cfg => {
+            //    cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+            //    cfg.AddBehavior<IPipelineBehavior<Ping, Pong>, PingPongBehavior>();
+            //    cfg.AddOpenBehavior(typeof(GenericBehavior<,>));
+            //});
 
             return services;
         }
