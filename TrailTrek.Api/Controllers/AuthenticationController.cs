@@ -2,7 +2,9 @@
 using ErrorOr;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TrailTrek.Application.Services;
+using TrailTrek.Application.Services.Authentication.Commands;
+using TrailTrek.Application.Services.Authentication.Common;
+using TrailTrek.Application.Services.Authentication.Queries;
 using TrailTrek.Contracts.Authentication;
 using TrailTrek.Domain.Common.Errors;
 
@@ -12,17 +14,20 @@ namespace TrailTrek.Api.Controllers
     [Route("auth")]
     public class AuthenticationController : ApiController
     {
-        private readonly IAuthenticationService _authenticationService;
+        private readonly IAuthenticationCommandService _authenticationCommandService;
+        private readonly IAuthenticationQueryService _authenticationQueryService;
 
-        public AuthenticationController(IAuthenticationService authenticationService)
+        public AuthenticationController(IAuthenticationCommandService authenticationService,
+                                        IAuthenticationQueryService authenticationQueryService)
         {
-            _authenticationService = authenticationService;
+            _authenticationCommandService = authenticationService;
+            _authenticationQueryService = authenticationQueryService;
         }
 
         [HttpPost("register")]
         public IActionResult Register(RegisterRequest request)
         {
-            ErrorOr.ErrorOr<AuthenticationResult> authResult = _authenticationService.Register(
+            ErrorOr.ErrorOr<AuthenticationResult> authResult = _authenticationCommandService.Register(
                 request.FirstName,
                 request.LastName,
                 request.Email,
@@ -38,7 +43,7 @@ namespace TrailTrek.Api.Controllers
         [HttpPost("login")]
         public IActionResult Login(LoginRequest request)
         {
-            var authResult = _authenticationService.Login(request.Email, request.Password);
+            var authResult = _authenticationQueryService.Login(request.Email, request.Password);
 
             if (authResult.IsError && authResult.FirstError == Errors.Authentication.InvalidCredentials)
             {

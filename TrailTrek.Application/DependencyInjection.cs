@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TrailTrek.Application.Services;
+using TrailTrek.Application.Services.Authentication.Commands;
+using TrailTrek.Application.Services.Authentication.Queries;
 
 namespace TrailTrek.Application
 {
@@ -13,7 +14,9 @@ namespace TrailTrek.Application
 
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IAuthenticationCommandService, AuthenticationCommandService>();
+            services.AddScoped<IAuthenticationQueryService, AuthenticationQueryService>();
+
 
             return services;
         }

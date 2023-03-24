@@ -6,17 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using TrailTrek.Application.Common.Interfaces.Authentication;
 using TrailTrek.Application.Common.Interfaces.Persistence;
+using TrailTrek.Application.Services.Authentication.Common;
 using TrailTrek.Domain.Common.Errors;
 using TrailTrek.Domain.Entities;
 
-namespace TrailTrek.Application.Services
+namespace TrailTrek.Application.Services.Authentication.Queries
 {
-    public class AuthenticationService : IAuthenticationService
+    public class AuthenticationQueryService : IAuthenticationQueryService
     {
         private readonly IJwtTokenGenerator _jwtTokenGenerator;
         private readonly IUserRepository _userRepository;
 
-        public AuthenticationService(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository)
+        public AuthenticationQueryService(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository)
         {
             _jwtTokenGenerator = jwtTokenGenerator;
             _userRepository = userRepository;
@@ -24,7 +25,7 @@ namespace TrailTrek.Application.Services
 
         public ErrorOr<AuthenticationResult> Login(string email, string password)
         {
-            if(_userRepository.GetUserByEmail(email) is not User user)
+            if (_userRepository.GetUserByEmail(email) is not User user)
                 return Errors.Authentication.InvalidCredentials;
 
 
@@ -50,27 +51,27 @@ namespace TrailTrek.Application.Services
 
         }
 
-        public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
-        {
-            if (_userRepository.GetUserByEmail(email) != null)
-                return Errors.User.DuplicateEmail;
+        //public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
+        //{
+        //    if (_userRepository.GetUserByEmail(email) != null)
+        //        return Errors.User.DuplicateEmail;
 
 
-            var user= new User
-            {
-                FirstName = firstName,
-                LastName = lastName,
-                Email = email,
-                Password = password
-            };
+        //    var user = new User
+        //    {
+        //        FirstName = firstName,
+        //        LastName = lastName,
+        //        Email = email,
+        //        Password = password
+        //    };
 
-            _userRepository.Add(user);
+        //    _userRepository.Add(user);
 
-            var token = _jwtTokenGenerator.GenerateToken(user);
+        //    var token = _jwtTokenGenerator.GenerateToken(user);
 
-            return new AuthenticationResult(
-                user,
-                token);
-        }
+        //    return new AuthenticationResult(
+        //        user,
+        //        token);
+        //}
     }
 }

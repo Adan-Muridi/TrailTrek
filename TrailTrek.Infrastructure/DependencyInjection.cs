@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using TrailTrek.Application.Common.Interfaces.Authentication;
 using TrailTrek.Application.Common.Interfaces.Persistence;
 using TrailTrek.Application.Common.Services;
-using TrailTrek.Application.Services;
+using TrailTrek.Application.Services.Authentication.Commands;
 using TrailTrek.Infrastructure.Authentication;
 using TrailTrek.Infrastructure.Persistence;
 using TrailTrek.Infrastructure.Services;
@@ -32,7 +32,7 @@ namespace TrailTrek.Infrastructure
 
 
             services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IAuthenticationCommandService, AuthenticationCommandService>();
 
             return services;
         }

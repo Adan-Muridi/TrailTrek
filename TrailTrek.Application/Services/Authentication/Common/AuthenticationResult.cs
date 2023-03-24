@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TrailTrek.Domain.Entities;
 
-namespace TrailTrek.Application.Services
+namespace TrailTrek.Application.Services.Authentication.Common
 {
     public record AuthenticationResult(
         User user,
