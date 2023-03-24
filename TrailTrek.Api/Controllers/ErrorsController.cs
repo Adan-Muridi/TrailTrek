@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TrailTrek.Api.Controllers
 {
-    public class ErrorsController : ControllerBase
+    public class ErrorsController : ApiController
     {
         [Route("/error")]
         public IActionResult Error()

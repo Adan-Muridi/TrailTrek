@@ -1,10 +1,12 @@
-﻿using System;
+﻿using ErrorOr;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrailTrek.Application.Common.Interfaces.Authentication;
 using TrailTrek.Application.Common.Interfaces.Persistence;
+using TrailTrek.Domain.Common.Errors;
 using TrailTrek.Domain.Entities;
 
 namespace TrailTrek.Application.Services
@@ -20,15 +22,15 @@ namespace TrailTrek.Application.Services
             _userRepository = userRepository;
         }
 
-        public AuthenticationResult Login(string email, string password)
+        public ErrorOr<AuthenticationResult> Login(string email, string password)
         {
             if(_userRepository.GetUserByEmail(email) is not User user)
-            {
-                throw new Exception("User with give email does NOT exist");
-            }
+                return Errors.Authentication.InvalidCredentials;
+
 
             if (user.Password != password)
-                throw new Exception("Invalid password");
+                return Errors.Authentication.InvalidCredentials;
+
 
             var token = _jwtTokenGenerator.GenerateToken(user);
 
@@ -48,10 +50,10 @@ namespace TrailTrek.Application.Services
 
         }
 
-        public AuthenticationResult Register(string firstName, string lastName, string email, string password)
+        public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
         {
-            if(_userRepository.GetUserByEmail(email) != null) 
-                throw new Exception("User with give email already exists");
+            if (_userRepository.GetUserByEmail(email) != null)
+                return Errors.User.DuplicateEmail;
 
 
             var user= new User

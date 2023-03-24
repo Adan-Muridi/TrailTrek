@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using TrailTrek.Api;
-using TrailTrek.Api.common.Error;
+using TrailTrek.Api.common.Errors;
 using TrailTrek.Application;
 using TrailTrek.Infrastructure;
 
@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
         .AddApplication()
         .AddInfrastructure(builder.Configuration);
 
-    builder.Services.AddSingleton<ProblemDetailsFactory,TrailTreckProblemDetailsFactory>();
+    builder.Services.AddSingleton<ProblemDetailsFactory, TrailTreckProblemDetailsFactory>();
 
 }
 
@@ -19,7 +19,7 @@ var app = builder.Build();
 {
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
-    {   
+    {
         app.UseSwagger();
         app.UseSwaggerUI();
     }
