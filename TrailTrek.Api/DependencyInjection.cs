@@ -1,4 +1,8 @@
 ﻿
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using TrailTrek.Api.common.Errors;
+using TrailTrek.Api.Common.Mapping;
+
 namespace TrailTrek.Api
 {
     public static class DependencyInjection
@@ -8,9 +12,11 @@ namespace TrailTrek.Api
             // Add services to the container.
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddControllers();
-            services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+            services.AddEndpointsApiExplorer();
 
+            services.AddSingleton<ProblemDetailsFactory, TrailTreckProblemDetailsFactory>();
+            services.AddMappings();
             return services;
         }
     }

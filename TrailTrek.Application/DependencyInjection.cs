@@ -6,7 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using MediatR;
 using System.Net.NetworkInformation;
-
+using System.Reflection;
+using FluentValidation;
+using TrailTrek.Application.Authentication.Common.Behaviors;
+using TrailTrek.Application;
 
 namespace TrailTrek.Application
 {
@@ -16,13 +19,18 @@ namespace TrailTrek.Application
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
 
-            //services.AddMediatR(cfg => {
-            //    cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
-            //    cfg.AddBehavior<IPipelineBehavior<Ping, Pong>, PingPongBehavior>();
-            //    cfg.AddOpenBehavior(typeof(GenericBehavior<,>));
-            //});
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             return services;
         }
     }
 }
+
+
+// This Works
+//services.AddMediatR(cfg => {
+//    cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+//    cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
+//});

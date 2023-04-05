@@ -1,17 +1,13 @@
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using TrailTrek.Api;
-using TrailTrek.Api.common.Errors;
 using TrailTrek.Application;
 using TrailTrek.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
-    builder.Services.AddPresentation()
+    builder.Services
+        .AddPresentation()
         .AddApplication()
         .AddInfrastructure(builder.Configuration);
-
-    builder.Services.AddSingleton<ProblemDetailsFactory, TrailTreckProblemDetailsFactory>();
-
 }
 
 
@@ -27,6 +23,7 @@ var app = builder.Build();
     app.UseExceptionHandler("/error");
     app.UseHttpsRedirection();
 
+    app.UseAuthentication();
     app.UseAuthorization();
 
     app.MapControllers();
