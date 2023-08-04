@@ -4,5 +4,4 @@ namespace TrailTrek.Api.common.Http
     {
         public const string Errors = "errors";
     }
-}
-//
+}//
